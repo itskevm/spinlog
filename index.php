@@ -1,6 +1,10 @@
 <?php
   date_default_timezone_set("America/Denver");
   $fecha_val = date("Y-m-d");
+
+  require "./assets/dbConnect.php";
+	$db = get_db();
+
 ?>
 
 <!DOCTYPE html>
