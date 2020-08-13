@@ -3,7 +3,6 @@
     $contents = file_get_contents('../record/data.json');
     $contentsArray = json_decode($contents, true);
     $maxIndex = count($contentsArray);
-    echo $contentsArray[0]['fecha'];
   }
 ?>
 
