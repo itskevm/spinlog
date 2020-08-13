@@ -1,0 +1,113 @@
+/* IDs */
+
+/* CLASSES */
+.cancha {
+	margin: 15px 0;
+}
+
+.entry {
+	background-color: rgba(112, 128, 144, 0.5);
+	border-radius: 15px 0 15px 0;
+	padding: 15px;
+}
+
+.logo {
+	text-align: center;
+}
+
+.view {
+	margin: 15px 0;
+}
+
+/* TAGS & ELEMENTS */
+body {
+	background-color: #EDC7B7;
+	color: rgb(29, 29, 31);
+	font-family: 'Average Sans', sans-serif;
+	padding: 5px;
+}
+
+button[type=button] {
+	background-color: rgba(112, 128, 144, 0.3);
+	border: none;
+	border-radius: 15px 0 15px 0;
+	color: black;
+	cursor: pointer;
+	padding: 14px 20px;
+  margin: 8px 0;
+	width: 100%;
+}
+
+h2 {
+	margin: 10px 0;
+	text-align: center;
+}
+
+hr {
+	border: 1px solid black;
+	width: 75%;
+}
+
+input[type=date], [type=number] {
+	background-color: whitesmoke;
+	width: 100%;
+  padding: 9px 15px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date]:hover, [type=number]:hover {
+	background-color: white;
+}
+
+input[type=date]:focus, [type=number]:focus {
+	outline: none;
+}
+
+input[type=submit] {
+	width: 100%;
+  background-color: whitesmoke;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+option {
+  color: black;
+}
+
+select {
+	background-color: whitesmoke;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+  outline-style: none;
+  padding: 9px 15px;
+  margin: 2px 0;
+  width: 100%;
+}
+
+table {
+	font-family: arial, sans-serif;
+	font-size: 14px;
+  border-collapse: collapse;
+	width: 100%;
+	background-color: #dcdcdc;
+}
+
+td, th {
+	border-bottom: 1px solid rgb(29, 29, 31);
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: whitesmoke;
+}

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" href="file.ico">
+  <link rel="icon" href="/assets/favicon.ico">
 	<meta charset="utf-8">
   <title>SpinLog | Entry</title>
   <link href="/index.css" rel="stylesheet" type="text/css"/>
@@ -38,7 +38,7 @@
         <label for="unito">Units:</label>
         <select name="unito" id="unito">
           <option value="mi">Imperial (mi)</option>
-          <option value="km">Metric (km)</option>
+          <option value="km" disabled>Metric (km) - coming soon</option>
         </select>
       </div>
       <input type="submit" value="Add to record">
