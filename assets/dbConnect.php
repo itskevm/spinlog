@@ -5,8 +5,12 @@ function get_db()
   try {
     if (getenv('DATABASE_URL')) {
       $dbUrl = getenv('DATABASE_URL');
+      echo "using env var. ";
     } else {
-      $dbUrl = "postgres://qzlwtfnyadsvam:bdf4f245cf4d618c9770b3d89913aac28140467284ee9429f6a81bba3e66be5c@ec2-52-204-20-42.compute-1.amazonaws.com:5432/d7qotsi56goomr";
+      $file = fopen('./assets/file.txt','r') or die("Unable to open file.");
+      $dbUrl = fgets($file);
+      fclose($file);
+      echo "using uri. ";
     }
     $dbOpts = parse_url($dbUrl);
 

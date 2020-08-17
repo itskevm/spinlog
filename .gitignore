@@ -1,2 +1,3 @@
 # Dont track
 /record/*.json
+/assets/*.txt
