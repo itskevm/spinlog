@@ -5,9 +5,8 @@
   require "$assetPointer/dbConnect.php";
   $db = get_db($assetPointer);
   echo "db set";
-  $statement = $db->prepare("INSERT INTO trip
-  VALUES (DEFAULT,1,$_POST[fecha],$_POST[distancia],
-    'blanknote',FALSE);");  
+  $statement = $db->prepare("INSERT INTO trip(driver_id, trip_date, distance, notes, metric)
+  VALUES (1,'$_POST[fecha]',$_POST[distancia],'blanknote',FALSE);");  
   echo "pre execute";
   $statement->execute();
   echo "post execute";
