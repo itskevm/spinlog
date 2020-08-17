@@ -1,4 +1,8 @@
 /* IDs */
+#top {
+	border-radius: 5px;
+	box-shadow: 0px 5px 5px;
+};
 
 /* CLASSES */
 .cancha {

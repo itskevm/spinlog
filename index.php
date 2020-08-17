@@ -23,10 +23,10 @@
 
 <body>
 	<div class="logo">
-		<h1>SpinLog</h1>
+    <img id="top" src="./assets/logo.png" alt="SpinLog" width="200" height="200">
 		<h3>Mind your Miles</h3>
-		<hr>
 	</div>
+  <hr>
 	<div class="entry">
 		<h2>Enter a trip</h2>
 		<form action="record" method="POST">
@@ -49,7 +49,9 @@
 		</form>
 	</div>
 	<div class="view">
-		<button type="button" onclick="viewHistory()">View Trip History</button>
+    <h2>View trips</h2>
+
+		<button type="button" onclick="viewHistory()">See full History</button>
 	</div>
   <footer>
   </footer>
