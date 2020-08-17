@@ -1,16 +1,18 @@
 <?php
+  echo "access";
   // Access the database
   $assetPointer = "../assets";
   require "$assetPointer/dbConnect.php";
   $db = get_db($assetPointer);
-
+  echo "db set";
   $statement = $db->prepare("INSERT INTO trip
-  VALUES (DEFAULT,1,'$_POST[fecha]','$_POST[distancia]',
+  VALUES (DEFAULT,1,$_POST[fecha],$_POST[distancia],
     'blanknote',FALSE);");  
+  echo "pre execute";
   $statement->execute();
-
+  echo "post execute";
   echo 'pre header';
-  header('Location: ./../');
+  header('Location: ./../index.php');
   echo 'post header';
 ?>
 
