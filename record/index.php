@@ -1,4 +1,14 @@
 <?php
+  // Access the database
+  $assetPointer = "../assets";
+  require "$assetPointer/dbConnect.php";
+  $db = get_db($assetPointer);
+  
+  $statement = $db->prepare("INSERT INTO trip
+  VALUES (DEFAULT,1,'$_POST[fecha]','$_POST[distancia]',
+    'blanknote',FALSE);");  
+  $statement->execute();
+
   if (!file_exists('data.json')) {
     $file=fopen("data.json", "a");
     fwrite($file, "");

@@ -1,5 +1,5 @@
 <?php
-function get_db()
+function get_db($localPath)
 {
   $db = NULL;
   try {
@@ -7,7 +7,7 @@ function get_db()
       $dbUrl = getenv('DATABASE_URL');
       echo "using env var. ";
     } else {
-      $file = fopen('./assets/file.txt','r') or die("Unable to open file.");
+      $file = fopen("$localPath/file.txt","r") or die("Unable to open file.");
       $dbUrl = fgets($file);
       fclose($file);
       echo "using uri. ";

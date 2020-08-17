@@ -1,16 +1,16 @@
 <?php
   date_default_timezone_set("America/Denver");
   $fecha_val = date("Y-m-d");
-
-  require "./assets/dbConnect.php";
-	$db = get_db();
-
+  $assetPointer = "./assets";
+  require "$assetPointer/dbConnect.php";
+	$db = get_db($assetPointer);
+  //$_POST['first_name']
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="icon" href="./assets/favicon.ico">
 	<meta charset="utf-8">
   <title>SpinLog | Entry</title>
   <link href="/index.css" rel="stylesheet" type="text/css"/>

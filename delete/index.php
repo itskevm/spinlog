@@ -1,4 +1,11 @@
 <?php
+  // Access the database
+  $assetPointer = "../assets";
+  require "$assetPointer/dbConnect.php";
+  $db = get_db($assetPointer);
+  
+  $statement = $db->prepare("DELETE FROM trip WHERE driver_id = 1;");  
+  $statement->execute();
   if (file_exists('../record/data.json')) {
     unlink('../record/data.json');
   }

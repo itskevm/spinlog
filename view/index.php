@@ -1,4 +1,11 @@
 <?php
+  $assetPointer = "../assets";
+  require "$assetPointer/dbConnect.php";
+  $db = get_db($assetPointer);
+
+  $statement = $db->prepare("SELECT * FROM trip WHERE driver_id=1");
+	$statement->execute();
+  
   if (file_exists('../record/data.json')) {
     $contents = file_get_contents('../record/data.json');
     $contentsArray = json_decode($contents, true);
@@ -33,20 +40,26 @@
         <th>Date</th>
         <th>Distance driven</th>
       </tr>
-  <?
-    if ($maxIndex) {
-      for ($i=0; $i<$maxIndex; $i++) {
-        echo "<tr><td>";
-        echo $contentsArray[$i]['fecha'];
-        echo "</td>";
-        echo "<td>";
-        echo $contentsArray[$i]['distancia'];
-        echo "</td></tr>";
-      }
-      echo "</table>";
-    } else {
+  <?php
+    $empty = true;
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      $empty = false;
+      echo "<tr><td>";
+      echo $row['trip_date'];
+      echo "</td>";
+      echo "<td>";
+      echo $row['distance'];
+      echo "</td></tr>";
+    }
+    
+    if ($empty)
+    {
       echo "</table><p>No data to display</p>";
     }
+    else {
+      echo "</table>";
+    }
+    
   ?>
   </div>
   <div class="view">

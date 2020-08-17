@@ -30,3 +30,10 @@ function deleteRecord() {
 		null;
 	}
 }
+
+function properSubmit() {
+  this.disabled=true;
+  this.value='Sending…';
+  form.submit();
+  // TO DO: add validation
+}
