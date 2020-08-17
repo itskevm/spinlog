@@ -9,8 +9,9 @@
     'blanknote',FALSE);");  
   $statement->execute();
 
-
+  echo 'pre header';
   header('Location: ./../');
+  echo 'post header';
 ?>
 
 <!DOCTYPE html>
