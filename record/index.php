@@ -3,28 +3,14 @@
   $assetPointer = "../assets";
   require "$assetPointer/dbConnect.php";
   $db = get_db($assetPointer);
-  
+
   $statement = $db->prepare("INSERT INTO trip
   VALUES (DEFAULT,1,'$_POST[fecha]','$_POST[distancia]',
     'blanknote',FALSE);");  
   $statement->execute();
 
-  if (!file_exists('data.json')) {
-    $file=fopen("data.json", "a");
-    fwrite($file, "");
-    fclose($file);
-    $contentsArray = array($_POST);
-    $json = json_encode($contentsArray);
-    file_put_contents('data.json', $json);
-  } else {
-    $contents = file_get_contents('data.json');
-    $contentsArray = json_decode($contents, true);
-    $newIndex = count($contentsArray);
-    $contentsArray[$newIndex] = $_POST;
-    $json = json_encode($contentsArray);
-    file_put_contents('data.json', $json);
-  }
-  header('Location: ../');
+
+  header('Location: ./../');
 ?>
 
 <!DOCTYPE html>
