@@ -29,7 +29,7 @@
   <hr>
 	<div class="entry">
 		<h2>Enter a trip</h2>
-		<form action="record" method="POST">
+		<form action="./record/" method="POST">
       <div class="cancha">
         <label for="fecha">Date:</label>
         <input type="date" name="fecha" id="fecha" value="<?= $fecha_val ?>">
