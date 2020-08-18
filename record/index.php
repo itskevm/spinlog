@@ -11,7 +11,7 @@
   $statement->execute();
   echo "post execute";
   echo 'pre header';
-  header('Location: ./../index.php');
+  header('Location: ./../');
   echo 'post header';
 ?>
 
