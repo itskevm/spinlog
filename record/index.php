@@ -1,18 +1,26 @@
 <?php
-  echo "access";
-  // Access the database
+  // Proceed only if form data has been received
+  if (!isset($_POST['distancia'])) {
+    header('Location: ./../');
+    exit();
+  }
+  
+  // Retrieve database connection code
   $assetPointer = "../assets";
   require "$assetPointer/dbConnect.php";
+
+  // Establish database connection
   $db = get_db($assetPointer);
-  echo "db set";
+  
+  // Prepare the RECORD statement
   $statement = $db->prepare("INSERT INTO trip(driver_id, trip_date, distance, notes, metric)
   VALUES (1,'$_POST[fecha]',$_POST[distancia],'blanknote',FALSE);");  
-  echo "pre execute";
+  // Execute the statement
   $statement->execute();
-  echo "post execute";
-  echo 'pre header';
+
+  // Go up a directory
   header('Location: ./../');
-  echo 'post header';
+  exit();
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +29,13 @@
   <link rel="icon" href="../assets/favicon.ico">
 	<meta charset="utf-8">
   <title>SpinLog | Verify</title>
+  <link href="../index.css" rel="stylesheet" type="text/css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Recording data">
   <meta name="author" content="Kevin Matos">
 </head>
-
 <body>
+  <p>Recording...</p>
   <footer>
   </footer>
 </body>

@@ -1,16 +1,22 @@
 <?php
+// Retrieve database connection code
   $assetPointer = "../assets";
   require "$assetPointer/dbConnect.php";
+
+// Establish database connection
   $db = get_db($assetPointer);
 
+// Prepare the SELECT statement
   $statement = $db->prepare("SELECT * FROM trip WHERE driver_id=1");
 	$statement->execute();
   
+  /*
   if (file_exists('../record/data.json')) {
     $contents = file_get_contents('../record/data.json');
     $contentsArray = json_decode($contents, true);
     $maxIndex = count($contentsArray);
   }
+  */
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +72,10 @@
 		<button type="button" onclick="newEntry()">Enter a trip</button>
   </div>
   <div class="view">
-		<button type="button" onclick="deleteRecord()">Delete history</button>
+    <form action="./delete" method="POST">
+      <input type="hidden" id="form_name" name="form_name" value="delete">
+      <input type="submit" value="Delete history" onclick="deleteRecord()">
+    </form>
 	</div>
   <footer>
   </footer>
