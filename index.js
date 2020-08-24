@@ -24,11 +24,11 @@ function newEntry() {
 }
 
 function deleteRecord() {
-  if (confirm("Press OK to confrim deletion.")) {
-    window.location = '../delete';
-  } else {
-		null;
-	}
+  var fullDeletion = confirm("Press OK to confirm deletion.");
+  if (fullDeletion == true) {
+    document.getElementById("deletion").submit();
+    //window.location = '../delete';
+  }
 }
 
 function properSubmit() {

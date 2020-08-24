@@ -5,12 +5,12 @@ function get_db($localPath)
   try {
     if (getenv('DATABASE_URL')) {
       $dbUrl = getenv('DATABASE_URL');
-      echo "using env var. ";
+      echo "Prod ";
     } else {
       $file = fopen("$localPath/file.txt","r") or die("Unable to open file.");
       $dbUrl = fgets($file);
       fclose($file);
-      echo "using uri. ";
+      echo "Local ";
     }
     $dbOpts = parse_url($dbUrl);
 
@@ -27,7 +27,7 @@ function get_db($localPath)
     echo 'Error!: ' . $ex->getMessage();
     die();
   }
-  echo "returning successfully";
+  echo "Connection Live.";
   return $db;
 }
 ?>

@@ -1,12 +1,12 @@
 <?php
-// Retrieve database connection code
+  // Retrieve database connection code
   $assetPointer = "../assets";
   require "$assetPointer/dbConnect.php";
 
-// Establish database connection
+  // Establish database connection
   $db = get_db($assetPointer);
 
-// Prepare the SELECT statement
+  // Prepare the SELECT statement
   $statement = $db->prepare("SELECT * FROM trip WHERE driver_id=1");
 	$statement->execute();
   
@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" href="../assets/favicon.ico">
+  <link rel="icon" href="https://i.imgur.com/RTCGtq7.png">
 	<meta charset="utf-8">
   <title>SpinLog | Verify</title>
   <link href="../index.css" rel="stylesheet" type="text/css"/>
@@ -45,6 +45,7 @@
       <tr>
         <th>Date</th>
         <th>Distance driven</th>
+        <th>Remove</th>
       </tr>
   <?php
     $empty = true;
@@ -55,6 +56,7 @@
       echo "</td>";
       echo "<td>";
       echo $row['distance'];
+      echo "<td><a href=''><img src='./assets/trash.png' id='binIcon' alt='remove'></a>";
       echo "</td></tr>";
     }
     
@@ -72,9 +74,9 @@
 		<button type="button" onclick="newEntry()">Enter a trip</button>
   </div>
   <div class="view">
-    <form action="./delete" method="POST">
+    <form action="./delete" id="deletion" name="deletion" method="POST">
       <input type="hidden" id="form_name" name="form_name" value="delete">
-      <input type="submit" value="Delete history" onclick="deleteRecord()">
+      <button type="button" id="delete_btn" form="deletion" onclick="deleteRecord()">Delete history</button>
     </form>
 	</div>
   <footer>

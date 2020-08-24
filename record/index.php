@@ -14,11 +14,14 @@
   
   // Prepare the RECORD statement
   $statement = $db->prepare("INSERT INTO trip(driver_id, trip_date, distance, notes, metric)
-  VALUES (1,'$_POST[fecha]',$_POST[distancia],'blanknote',FALSE);");  
+  VALUES (1,'$_POST[fecha]',$_POST[distancia],'blanknote',$_POST[metrico]);");  
   // Execute the statement
   $statement->execute();
 
-  // Go up a directory
+  // Prevent post data from being read again if user goes Back
+  unset($_POST['distancia']);
+  
+  // Go up a directory (main page)
   header('Location: ./../');
   exit();
 ?>

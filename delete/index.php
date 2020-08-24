@@ -17,11 +17,11 @@
   $statement = $db->prepare("DELETE FROM trip WHERE driver_id = 1;");  
   // Execute the statement
   $statement->execute();
-  /*
-  if (file_exists('../record/data.json')) {
-    unlink('../record/data.json');
-  }
-  */
+  
+  // Prevent post data from being read again if user goes Back
+  unset($_POST['form_name']);
+
+  // Ensure you're back on the View page
   header('Location: ./../view');
   exit();
 ?>
@@ -38,6 +38,7 @@
 </head>
 
 <body>
+  <p>Deleting...</p>
   <footer>
   </footer>
 </body>
