@@ -5,12 +5,11 @@ function get_db($localPath)
   try {
     if (getenv('DATABASE_URL')) {
       $dbUrl = getenv('DATABASE_URL');
-      echo "Prod ";
     } else {
       $file = fopen("$localPath/file.txt","r") or die("Unable to open file.");
       $dbUrl = fgets($file);
       fclose($file);
-      echo "Local ";
+      echo "Local Connection Live.";
     }
     $dbOpts = parse_url($dbUrl);
 
@@ -27,7 +26,6 @@ function get_db($localPath)
     echo 'Error!: ' . $ex->getMessage();
     die();
   }
-  echo "Connection Live.";
   return $db;
 }
 ?>

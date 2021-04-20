@@ -19,10 +19,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="<?=$assetPointer?>/favicon.ico" type="image/x-icon" />
 	<meta charset="utf-8">
   <title>SpinLog | Entry</title>
-  <link href="/index.css" rel="stylesheet" type="text/css"/>
+  <link href="/index.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)"/>
+  <link href="/index.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 768px)"/>
+  <link href="/tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 769px)"/>
+  <link href="/footer.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" type="image/x-icon"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="Kevin Matos">
@@ -36,6 +39,21 @@
 		<h4>Mind your Miles</h4>
 	</div>
   <hr>
+  <!--
+  <div>
+    <h2>Login (coming soon)</h2>
+    <form action="POST">
+      <div>
+        <label for="uname">Username:</label>
+        <input type="text" name="uname" id="uname">
+      </div>
+      <div>
+        <label for="ukey">Key:</label>
+        <input type="password" name="ukey" id="ukey">
+      </div>
+    </form>
+  </div>
+  -->
 	<div class="entry">
 		<h2>Enter a trip</h2>
 		<form action="./record/" class="recordform" method="POST">
@@ -88,6 +106,9 @@
 		<button type="button" onclick="viewHistory()">See full History</button>
 	</div>
   <footer>
+    <hr>
+    <p>KevMGaming© 2021</p>
+    <p>All Rights Reserved</p>
   </footer>
 </body>
 </html>

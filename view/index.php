@@ -24,7 +24,7 @@
 <head>
   <link rel="icon" href="https://i.imgur.com/RTCGtq7.png">
 	<meta charset="utf-8">
-  <title>SpinLog | Verify</title>
+  <title>SpinLog | View</title>
   <link href="../index.css" rel="stylesheet" type="text/css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
@@ -35,10 +35,9 @@
 
 <body>
   <div class="logo">
-		<h1>SpinLog</h1>
-		<h3>Mind your Miles</h3>
-		<hr>
-  </div>
+    <a href="./" id="logolink"><img id="top" src="<?=$assetPointer?>/2logo.png" alt="SpinLog"></a>
+		<h4>Mind your Miles</h4>
+	</div>
   <div class="entry">
     <h2>Trip History</h2>
     <table>
@@ -50,13 +49,16 @@
   <?php
     $empty = true;
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      $issa = $row['distance'];
+      echo "<script>var okk = $issa;console.log(okk);</script>";
       $empty = false;
+      $great = $row['trip_id'];
       echo "<tr><td>";
       echo $row['trip_date'];
       echo "</td>";
       echo "<td>";
       echo $row['distance'];
-      echo "<td><a href=''><img src='./../assets/trash.png' id='binIcon' alt='remove'></a>";
+      echo "<td><a href='./remove?entryid=$great'><img src='./../assets/trash.png' id='binIcon' alt='remove'></a>";
       echo "</td></tr>";
     }
     
