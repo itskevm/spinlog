@@ -12,9 +12,9 @@
   
   // Establish database connection
   $db = get_db($assetPointer);
-  $val = $_GET['entryid'];
+
   // Prepare the DELETE statement
-  $statement = $db->prepare("DELETE FROM trip WHERE trip_id = $val;");  
+  $statement = $db->prepare("DELETE FROM trip WHERE trip_id = $_GET[entryid];");  
   // Execute the statement
   $statement->execute();
   
