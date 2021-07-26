@@ -58,7 +58,7 @@
       echo "</td>";
       echo "<td>";
       echo $row['distance'];
-      echo "<td><a href='./remove?entryid=$great'><img src='./../assets/trash.png' id='binIcon' alt='remove'></a>";
+      echo "<td><a href='./../remove?entryid=$great'><img src='./../assets/trash.png' id='binIcon' alt='remove'></a>";
       echo "</td></tr>";
     }
     
