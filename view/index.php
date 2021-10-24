@@ -38,6 +38,11 @@
     <a href="./" id="logolink"><img id="top" src="<?=$assetPointer?>/2logo.png" alt="SpinLog"></a>
 		<h4>Mind your Miles</h4>
 	</div>
+  <div class="view">
+		<button type="button" onclick="newEntry()">Enter a trip</button>
+    <button type="button" onclick="detailsBetweenDates()">Get trip details between dates</button>
+    <button type="button" onclick="">coming soon</button>
+  </div>
   <div class="entry">
     <h2>Trip History</h2>
     <table>
@@ -71,9 +76,6 @@
     }
     
   ?>
-  </div>
-  <div class="view">
-		<button type="button" onclick="newEntry()">Enter a trip</button>
   </div>
   <div class="view">
     <form action="./delete" id="deletion" name="deletion" method="POST">

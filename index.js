@@ -23,6 +23,11 @@ function newEntry() {
 	window.location = '../';
 }
 
+function detailsBetweenDates() {
+  // currently unused = no link points there, only accesible by form
+	window.location = '/calculate-details';
+}
+
 function deleteRecord() {
   var fullDeletion = confirm("Press OK to confirm deletion.");
   if (fullDeletion == true) {

@@ -105,6 +105,21 @@
   ?>
 		<button type="button" onclick="viewHistory()">See full History</button>
 	</div>
+  <br>
+  <div class="entry">
+    <h2>Trip details by range</h2>
+    <form action="./calculate-details/" class="recordform" method="POST">
+      <div class="cancha">
+        <label for="fecha-from">From:</label>
+        <input type="date" name="fecha-from" id="fecha-from" value="<?= $fecha_val ?>">
+      </div>
+      <div class="cancha">
+        <label for="fecha-to">To and including:</label>
+        <input type="date" name="fecha-to" id="fecha-to" value="<?= $fecha_val ?>">
+      </div>
+      <input type="submit" value="Calculate details">
+		</form>
+  </div>
   <footer>
     <hr>
     <p>KevMGaming© 2021</p>
