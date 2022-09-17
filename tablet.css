@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=PT+Sans&display=swap');
+
 /* IDs */
 #top {
   max-width: 200px;
@@ -7,6 +9,11 @@
   width: 4vw;
 }
 
+#oneNumber {
+  width: 60px;
+  margin: 0 4px;
+}
+
 tbody>tr>:nth-child(3){
   text-align:center;
  }
@@ -14,6 +21,27 @@ tbody>tr>:nth-child(3){
 /* CLASSES */
 .cancha {
   margin: 20px 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+  /* Responsive layout - makes a two column-layout instead of one-column layout */
+  flex-direction: row;
+}
+
+.flex-item-left {
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  background-color: dodgerblue;
+  padding: 10px;
+  flex: 50%;
 }
 
 .recordform {
@@ -58,6 +86,7 @@ button[type=button] {
 h2 {
   margin: 10px 0;
   text-align: center;
+  font-family: 'PT Sans', sans-serif;
 }
 
 h4 {
@@ -73,7 +102,7 @@ hr {
 input[type=date], [type=number] {
   background-color: whitesmoke;
   width: 100%;
-  padding: 9px 15px;
+  padding: 7px 12px;
   margin: 2px 0;
   display: inline-block;
   border: 1px solid #ccc;

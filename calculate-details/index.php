@@ -1,10 +1,14 @@
 <?php
   // Proceed only if form data has been received
   if (!isset($_POST['fecha-from']) && !isset($_POST['fecha-to'])) {
-  // unset($_SESSION['form_name']);
-  header('Location: ./../');
-  exit();
-}
+    // unset($_SESSION['form_name']);
+    header('Location: ./../');
+    exit();
+  }
+
+  function spinlogDecimal($inputValue, $decimalPlaces) {
+    return number_format((float)$inputValue, $decimalPlaces, '.', '');
+  }
 
   // Force Mountain Time Zone
   date_default_timezone_set("America/Denver");
@@ -70,14 +74,14 @@
 	<meta charset="utf-8">
   <title>SpinLog | Entry</title>
   <link href="/index.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)"/>
-  <link href="/index.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 768px)"/>
-  <link href="/tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 769px)"/>
+  <link href="/index.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 767px)"/>
+  <link href="/tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width: 768px)"/>
   <link href="/footer.css" rel="stylesheet" type="text/css"/>
   <link rel="icon" type="image/x-icon"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="Kevin Matos">
-  <script src="/index.js">
+  <script src="/index.js" async>
   </script>
 </head>
 
@@ -88,11 +92,50 @@
 	</div>
   <hr>
 	<div class="entry">
-		<h2>Trip details by range</h2>
-    <p>From <?=$date_from;?> to <?=$date_to;?> (<?=$days;?> days),
-    you drove <?=$sum;?> miles in <?=$trips;?> recorded trips. 
-    This was approximately <?=$avg;?> miles per trip. If gas is $3.00/gal,
-    this driving period cost between $<?=$minGasPrice;?>-$<?=$maxGasPrice;?>.</p>
+		<h2>Details by range</h2>
+    <div class="flex-container">
+      <div class="flex-item-left">
+        <table>
+          <tr>
+            <th>From</th>
+            <td><?=$date_from;?></td>
+          </tr>
+          <tr>
+            <th>To</th>
+            <td><?=$date_to;?></td>
+          </tr>
+          <tr>
+            <th>Trips</th>
+            <td><?=$trips;?></td>
+          </tr>
+          <tr>
+            <th>Duration</th>
+            <td><?=$days;?> days</td>
+          </tr>
+        </table>
+      </div>
+      <div class="flex-item-right">
+        <table>
+          <tr>
+            <th>Total distance</th>
+            <td><?=spinlogDecimal($sum, 1);?> miles</td>
+          </tr>
+          <tr>
+            <th>Avg. per trip</th>
+            <td><?=$avg;?> miles</td>
+          </tr>
+          <tr>
+            <th>Est. gas price</th>
+            <td>$<input id="oneNumber" class="gas-input" name="oneNumber" type="number" step="0.01" value=3.00>/gal</td>
+          </tr>
+          <tr>
+            <th>Cost</th>
+            <td>$<?=spinlogDecimal($minGasPrice, 2);?>-$<?=spinlogDecimal($maxGasPrice, 2);?></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <h2>Details by trip</h2>
     <table>
       <tr>
         <th>Date</th>

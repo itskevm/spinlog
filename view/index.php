@@ -77,12 +77,12 @@
     
   ?>
   </div>
-  <div class="view">
+  <!-- <div class="view">
     <form action="./delete" id="deletion" name="deletion" method="POST">
       <input type="hidden" id="form_name" name="form_name" value="delete">
       <button type="button" id="delete_btn" form="deletion" onclick="deleteRecord()">Delete history</button>
     </form>
-	</div>
+	</div> -->
   <footer>
   </footer>
 </body>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=PT+Sans&display=swap');
+
 /* IDs */
 #top {
   width: 60%;
@@ -7,6 +9,11 @@
   width: 4vw;
 }
 
+#oneNumber {
+  width: 40px;
+  padding: 3px 3px;
+}
+
 tbody>tr>:nth-child(3){
   text-align:center;
  }
@@ -14,6 +21,37 @@ tbody>tr>:nth-child(3){
 /* CLASSES */
 .cancha {
   margin: 20px 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+  flex-direction: column;
+}
+
+.flex-item-left {
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  background-color: dodgerblue;
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-container th {
+  width: 50%;
+}
+
+.flex-container td {
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .recordform {
@@ -54,6 +92,7 @@ button[type=button] {
 }
 
 h2 {
+  font-family: 'PT Sans', sans-serif;
   margin: 10px 0;
   text-align: center;
 }
@@ -117,6 +156,7 @@ table {
   font-family: arial, sans-serif;
   font-size: 14px;
   border-collapse: collapse;
+  table-layout: fixed;
   width: 100%;
   background-color: #dcdcdc;
 }

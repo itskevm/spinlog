@@ -42,3 +42,16 @@ function properSubmit() {
   form.submit();
   // TO DO: add validation
 }
+
+const gasInput = document.getElementById("oneNumber");
+gasInput.addEventListener('input', function () {
+  console.log(this.value);
+  
+  if (this.value < 0)
+  {
+    this.value = 3.00;
+  }
+});
+gasInput.addEventListener('focusout', function () {
+  this.value = "3.00";
+});
